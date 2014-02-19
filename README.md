@@ -1,20 +1,31 @@
-
 # browser-friendly-max-input
 
-    validates client input char amount and updates ui.
+  validates client input char amount and updates ui.
 
 ## Installation
 
-    TODO: Create component of of this.
+  Install with [component(1)](http://component.io):
+
+    $ component install Jody-Geers/browser-friendly-max-input
 
 ## API
 
-    // onkeyup event from ui textarea.
-    limitUserInput({
-        el:this,
-        targetId:'chars-remaining'
-    });
+	<!-- example ui -->
+	textarea <span id="output-area">500</span> characters remaining<br/>
+	<textarea class="textarea" maxlength="500" id="input-area" ></textarea>
+	
+	<script>
+		var maxInputVal = require('Jody-Geers-browser-friendly-max-input');
+		
+		// attach behaviour
+		// output 'targetId' optional
+		maxInputVal.attachMaxInputValidation({
+			elId : "input-area",
+			targetId : "output-area"
+		});
+	</script>
+
 
 ## License
 
-    MIT
+  MIT

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			.textarea {
+				width: 400px;
+				height: 200px;
+				resize: vertical;
+			}
+		</style>
+		<script>
+			/**
+			 * Browser friendly max input validation.
+			 * @param {string} args.el - The context element.
+			 * @param {string} args.targetId - The output ui element id for count.
+			 */
+			function limitUserInput ( args ) {
+				var _maxLength = args.el.maxLength;
+				// include new lines as count of 2
+				var _newLines = args.el.value.match(/(\r\n|\n|\r)/g);
+				var _addition = 0;
+				
+				if ( _newLines != null ) _addition = _newLines.length;
+
+				// update UI
+				if ( ( (args.el.value.length + _addition) - _maxLength ) > 0 ) {
+					args.el.value = args.el.value.slice( 0, -( (args.el.value.length + _addition) - _maxLength ) );
+				}
+				document.getElementById(args.targetId).innerHTML = _maxLength - (args.el.value.length + _addition);				
+			};
+		</script>
+	</head>
+	
+	<body>
+		textarea <span id="chars-remaining">500</span> characters remaining<br/>
+		<textarea class="textarea" maxlength="500" onkeyup="limitUserInput({ el:this, targetId:'chars-remaining' });" ></textarea>
+	</body>
+</html>

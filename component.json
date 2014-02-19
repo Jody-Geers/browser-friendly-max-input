@@ -1,0 +1,16 @@
+{
+  "name": "browser-friendly-max-input",
+  "repo": "Jody-Geers/browser-friendly-max-input",
+  "description": "browser fwiendly max input validation.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {
+    "component/assert": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
