@@ -25,21 +25,21 @@
 	*/
 	function limitUserInput( args ) {
 		
-		var _maxLength = args.el.maxLength;
-     	// include new lines as count of 2
-     	var _newLines = args.el.value.match(/(\r\n|\n|\r)/g);
-     	var _addition = 0;
+		var maxLength = args.el.maxLength;
+     		// include new lines as count of 2
+     		var newLines = args.el.value.match( /(\r\n|\n|\r)/g );
+     		var addition = 0;
 
-		if ( _newLines != null ) _addition = _newLines.length;
+		if ( newLines != null ) addition = newLines.length;
 
 		// update UI
-		if ( ( (args.el.value.length + _addition) - _maxLength ) > 0 ) {
+		if ( ( ( args.el.value.length + addition ) - maxLength ) > 0 ) {
 			
-			args.el.value = args.el.value.slice( 0, -( (args.el.value.length + _addition) - _maxLength ) );
+			args.el.value = args.el.value.slice( 0, -( ( args.el.value.length + addition ) - maxLength ) );
 			
 		}
 		
-		document.getElementById(args.targetId).innerHTML = _maxLength - (args.el.value.length + _addition);
+		document.getElementById( args.targetId ).innerHTML = maxLength - ( args.el.value.length + addition );
 		
 	};
 	
