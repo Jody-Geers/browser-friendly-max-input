@@ -15,7 +15,7 @@
 	<textarea class="textarea" maxlength="500" id="input-area" ></textarea>
 	
 	<script>
-		var maxInputVal = require('Jody-Geers-browser-friendly-max-input');
+		var maxInputVal = require( 'Jody-Geers-browser-friendly-max-input' );
 		
 		// attach behaviour
 		// output 'targetId' optional
